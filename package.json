@@ -1,5 +1,5 @@
 {
-  "name": "@lvjiw/code-workflow-types",
+  "name": "@lvjw/code-workflow-types",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.js",
