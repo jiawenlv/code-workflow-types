@@ -1,7 +1,6 @@
 {
-  "name": "@ljiawen/code-workflow-types",
+  "name": "@lvjiw/code-workflow-types",
   "version": "1.0.0",
-  "description": "",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -12,6 +11,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jiawenlv/code-workflow-types.git"
   },
   "scripts": {
     "build": "tsc",
@@ -26,5 +29,10 @@
   },
   "workspaces": [
     "."
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/jiawenlv/code-workflow-types/issues"
+  },
+  "homepage": "https://github.com/jiawenlv/code-workflow-types#readme",
+  "description": "Type definitions for code workflow tools"
 }
