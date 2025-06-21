@@ -1,6 +1,6 @@
 import { WorkflowCondition, WorkflowNodeInputField } from "./node-field";
 
-export interface ReactFlowNodeConfig {
+export interface ReactFlowNodeConfig<T> {
   // 节点 id
   id: string;
 
@@ -8,7 +8,7 @@ export interface ReactFlowNodeConfig {
   type: WorkflowNodeTypeEnum;
 
   // 节点数据
-  data: WorkflowData;
+  data: T
 
   // 位置
   position: {
@@ -47,7 +47,7 @@ export enum WorkflowNodeTypeEnum {
 }
 
 
-export interface WorkflowData {
+export type WorkflowData = {
   // 节点标签
   label: string;
   showInputs: boolean;
@@ -65,9 +65,15 @@ export interface WorkflowData {
   [key: string]: any;
 }
 
+export type WorkflowNode = ReactFlowNodeConfig<WorkflowData>;
+
 export enum WorklowNodeStatusEnum {
   dev = "dev",
   running = "running",
   success = "success",
   error = "error",
+}
+
+export type DBNodeData = {
+
 }
