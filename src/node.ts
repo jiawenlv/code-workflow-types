@@ -1,6 +1,6 @@
 import { WorkflowCondition, WorkflowNodeInputField } from "./node-field";
 
-export interface ReactFlowNodeConfig<T> {
+export interface ReactFlowNodeConfig<T=any> {
   // 节点 id
   id: string;
 
@@ -18,17 +18,21 @@ export interface ReactFlowNodeConfig<T> {
     y: number;
   };
 
+  measured: {
+    // 宽度
+    width: number,
+    // 高度
+    height: number
+  },
+
   // 是否有错误
   isError?: boolean;
 
-  // 是否折叠
-  isFolded?: boolean;
-
   // 是否选中
-  isSelected?: boolean;
+  selected?: boolean;
 
-  // 节点状态
-  status?: WorklowNodeStatusEnum;
+  // 是否处于拖动状态
+  dragging?: boolean;
 }
 
 export enum WorkflowNodeTypeEnum {

@@ -1,16 +1,19 @@
 import { WorkflowCondition, WorkflowNodeInputField } from "./node-field";
-export interface ReactFlowNodeConfig {
+export interface ReactFlowNodeConfig<T = any> {
     id: string;
     type: WorkflowNodeTypeEnum;
-    data: WorkflowData;
+    data: T;
     position: {
         x: number;
         y: number;
     };
+    measured: {
+        width: number;
+        height: number;
+    };
     isError?: boolean;
-    isFolded?: boolean;
-    isSelected?: boolean;
-    status?: WorklowNodeStatusEnum;
+    selected?: boolean;
+    dragging?: boolean;
 }
 export declare enum WorkflowNodeTypeEnum {
     systemConfig = "systemConfig",
@@ -26,7 +29,7 @@ export declare enum WorkflowNodeTypeEnum {
     dbQuery = "dbQuery",
     httpRequest = "httpRequest"
 }
-export interface WorkflowData {
+export type WorkflowData = {
     label: string;
     showInputs: boolean;
     showOutputs: boolean;
@@ -35,10 +38,12 @@ export interface WorkflowData {
     outputs?: WorkflowNodeInputField[];
     conditions?: WorkflowCondition[];
     [key: string]: any;
-}
+};
+export type WorkflowNode = ReactFlowNodeConfig<WorkflowData>;
 export declare enum WorklowNodeStatusEnum {
     dev = "dev",
     running = "running",
     success = "success",
     error = "error"
 }
+export type DBNodeData = {};

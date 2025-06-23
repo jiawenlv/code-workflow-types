@@ -1,6 +1,6 @@
 {
   "name": "@lvjw/code-workflow-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -18,7 +18,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "dev": "npm run build && tsc --watch",
+    "dev": "npm run build &&· tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
