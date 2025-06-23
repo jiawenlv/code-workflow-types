@@ -16,18 +16,14 @@ export interface ReactFlowNodeConfig<T = any> {
     dragging?: boolean;
 }
 export declare enum WorkflowNodeTypeEnum {
-    systemConfig = "systemConfig",
-    globalVariable = "globalVariable",
     workflowStart = "workflowStart",
     workflowEnd = "workflowEnd",
     code = "code",
     condition = "condition",
-    loop = "loop",
-    loopStart = "loopStart",
-    loopEnd = "loopEnd",
     chatWithLLM = "chatWithLLM",
     dbQuery = "dbQuery",
-    httpRequest = "httpRequest"
+    httpRequest = "httpRequest",
+    preview = "preview"
 }
 export type WorkflowData = {
     label: string;

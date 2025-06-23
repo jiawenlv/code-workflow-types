@@ -1,17 +1,18 @@
 export var WorkflowNodeTypeEnum;
 (function (WorkflowNodeTypeEnum) {
-    WorkflowNodeTypeEnum["systemConfig"] = "systemConfig";
-    WorkflowNodeTypeEnum["globalVariable"] = "globalVariable";
+    // systemConfig = "systemConfig",
+    // globalVariable = "globalVariable",
     WorkflowNodeTypeEnum["workflowStart"] = "workflowStart";
     WorkflowNodeTypeEnum["workflowEnd"] = "workflowEnd";
     WorkflowNodeTypeEnum["code"] = "code";
     WorkflowNodeTypeEnum["condition"] = "condition";
-    WorkflowNodeTypeEnum["loop"] = "loop";
-    WorkflowNodeTypeEnum["loopStart"] = "loopStart";
-    WorkflowNodeTypeEnum["loopEnd"] = "loopEnd";
+    // loop = "loop",
+    // loopStart = "loopStart",
+    // loopEnd = "loopEnd",
     WorkflowNodeTypeEnum["chatWithLLM"] = "chatWithLLM";
     WorkflowNodeTypeEnum["dbQuery"] = "dbQuery";
     WorkflowNodeTypeEnum["httpRequest"] = "httpRequest";
+    WorkflowNodeTypeEnum["preview"] = "preview";
 })(WorkflowNodeTypeEnum || (WorkflowNodeTypeEnum = {}));
 export var WorklowNodeStatusEnum;
 (function (WorklowNodeStatusEnum) {
