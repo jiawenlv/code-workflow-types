@@ -36,18 +36,19 @@ export interface ReactFlowNodeConfig<T=any> {
 }
 
 export enum WorkflowNodeTypeEnum {
-  systemConfig = "systemConfig",
-  globalVariable = "globalVariable",
+  // systemConfig = "systemConfig",
+  // globalVariable = "globalVariable",
   workflowStart = "workflowStart",
   workflowEnd = "workflowEnd",
   code = "code",
   condition = "condition",
-  loop = "loop",
-  loopStart = "loopStart",
-  loopEnd = "loopEnd",
+  // loop = "loop",
+  // loopStart = "loopStart",
+  // loopEnd = "loopEnd",
   chatWithLLM = "chatWithLLM",
   dbQuery = 'dbQuery',
   httpRequest = 'httpRequest',
+  preview="preview"
 }
 
 
