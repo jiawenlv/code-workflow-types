@@ -18,7 +18,7 @@ export interface ReactFlowNodeConfig<T=any> {
     y: number;
   };
 
-  measured: {
+  measured?: {
     // 宽度
     width: number,
     // 高度

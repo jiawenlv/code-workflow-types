@@ -34,6 +34,7 @@ export var WorkflowIOValueTypeEnum;
     WorkflowIOValueTypeEnum["modelId"] = "modelId";
     WorkflowIOValueTypeEnum["password"] = "password";
     WorkflowIOValueTypeEnum["httpRequestOptions"] = "httpRequestOptions";
+    WorkflowIOValueTypeEnum["file"] = "file";
 })(WorkflowIOValueTypeEnum || (WorkflowIOValueTypeEnum = {}));
 export var WorkflowConditionRelationshipEnum;
 (function (WorkflowConditionRelationshipEnum) {

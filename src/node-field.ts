@@ -11,6 +11,7 @@ export interface WorkflowNodeIOFieldBase {
   valuePath?: string[];
   valueLabelPath?: string[];
   required?: boolean;
+  defaultValue?: any;
 }
 
 export enum WorkflowConditionOperatorEnum {
@@ -48,6 +49,7 @@ export enum WorkflowIOValueTypeEnum {
   modelId = "modelId",
   password = "password",
   httpRequestOptions = "httpRequestOptions",
+  file = "file"
 }
 
 export type WorkflowNodeInputField = WorkflowNodeIOFieldBase & {};

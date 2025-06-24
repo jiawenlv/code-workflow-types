@@ -7,7 +7,7 @@ export interface ReactFlowNodeConfig<T = any> {
         x: number;
         y: number;
     };
-    measured: {
+    measured?: {
         width: number;
         height: number;
     };
