@@ -1,3 +1,5 @@
+import { WorkflowConditionOperatorEnum, WorkflowConditionRelationshipEnum, WorkflowIOValueTypeEnum } from "../enums/field";
+
 export interface WorkflowNodeIOFieldBase {
   id: string;
   attrName: string;
@@ -14,43 +16,9 @@ export interface WorkflowNodeIOFieldBase {
   defaultValue?: any;
 }
 
-export enum WorkflowConditionOperatorEnum {
-  equal = "equal",
-  notEqual = "notEqual",
-  greaterThan = "greaterThan",
-  greaterThanEqual = "greaterThanEqual",
-  lessThan = "lessThan",
-  lessThanEqual = "lessThanEqual",
-  isNull = "isNull",
-  isNotNull = "isNotNull",
-  include = "include",
-  notInclude = "notInclude",
-}
 
-export enum WorkflowIOValueTypeEnum {
-  string = "string",
-  stringWithLLM = "string",
-  number = "number",
-  boolean = "boolean",
-  object = "object",
-  code = "code",
-  arrayString = "arrayString",
-  arrayNumber = "arrayNumber",
-  arrayBoolean = "arrayBoolean",
-  arrayObject = "arrayObject",
-  arrayAny = "arrayAny",
-  any = "any",
-  chatHistory = "chatHistory",
-  datasetQuote = "datasetQuote",
-  dynamic = "dynamic",
-  selectDataset = "selectDataset",
-  selectApp = "selectApp",
-  longText = "longText",
-  modelId = "modelId",
-  password = "password",
-  httpRequestOptions = "httpRequestOptions",
-  file = "file"
-}
+
+
 
 export type WorkflowNodeInputField = WorkflowNodeIOFieldBase & {};
 
@@ -63,10 +31,7 @@ export interface WorkflowCondition {
   conditions: WorkflowConditionItem[];
 }
 
-export enum WorkflowConditionRelationshipEnum {
-  AND = "AND",
-  OR = "OR",
-}
+
 
 export const WorkflowConditionRelationshipOptions = [
   { label: "同时满足", value: WorkflowConditionRelationshipEnum.AND },

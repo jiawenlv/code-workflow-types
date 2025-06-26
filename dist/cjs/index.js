@@ -14,8 +14,5 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./graph"), exports);
-__exportStar(require("./node"), exports);
-__exportStar(require("./edge"), exports);
-__exportStar(require("./node-field"), exports);
-__exportStar(require("./flow"), exports);
+__exportStar(require("./types/index.js"), exports);
+__exportStar(require("./enums/index.js"), exports);

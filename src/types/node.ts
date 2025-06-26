@@ -1,6 +1,7 @@
-import { WorkflowCondition, WorkflowNodeInputField } from "./node-field";
+import { WorkflowNodeTypeEnum } from "../enums/node";
+import { WorkflowCondition, WorkflowNodeInputField } from "./field";
 
-export interface ReactFlowNodeConfig<T=any> {
+export interface ReactFlowNodeConfig<T = any> {
   // 节点 id
   id: string;
 
@@ -35,21 +36,7 @@ export interface ReactFlowNodeConfig<T=any> {
   dragging?: boolean;
 }
 
-export enum WorkflowNodeTypeEnum {
-  // systemConfig = "systemConfig",
-  // globalVariable = "globalVariable",
-  workflowStart = "workflowStart",
-  workflowEnd = "workflowEnd",
-  code = "code",
-  condition = "condition",
-  // loop = "loop",
-  // loopStart = "loopStart",
-  // loopEnd = "loopEnd",
-  chatWithLLM = "chatWithLLM",
-  dbQuery = 'dbQuery',
-  httpRequest = 'httpRequest',
-  preview="preview"
-}
+
 
 
 export type WorkflowData = {
@@ -72,12 +59,6 @@ export type WorkflowData = {
 
 export type WorkflowNode = ReactFlowNodeConfig<WorkflowData>;
 
-export enum WorklowNodeStatusEnum {
-  dev = "dev",
-  running = "running",
-  success = "success",
-  error = "error",
-}
 
 export type DBNodeData = {
 

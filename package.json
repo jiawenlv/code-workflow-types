@@ -1,30 +1,52 @@
 {
   "name": "@lvjw/code-workflow-types",
   "version": "1.0.3",
-  "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./types": {
+      "import": "./dist/esm/types/index.js",
+      "require": "./dist/cjs/types/index.js",
+      "types": "./dist/types/types/index.d.ts"
+    },
+    "./enums": {
+      "import": "./dist/esm/enums/index.js",
+      "require": "./dist/cjs/enums/index.js",
+      "types": "./dist/types/enums/index.d.ts"
     }
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/jiawenlv/code-workflow-types.git"
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "npm run build &&· tsc --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run clean && npm run build:types && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:types": "tsc -p tsconfig.types.json",
+    "clean": "rimraf dist",
+    "dev": "npm run build -- --watch",
+    "prepublishOnly": "npm run build"
   },
-  "keywords": [],
+  "keywords": [
+    "typescript",
+    "types",
+    "enums",
+    "shared"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "rimraf": "^5.0.5",
     "typescript": "^5.8.3"
   },
   "workspaces": [
