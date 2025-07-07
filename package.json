@@ -1,8 +1,16 @@
 {
   "name": "@lvjw/code-workflow-types",
   "version": "1.0.5",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/cjs/index.d.ts"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -11,7 +19,9 @@
     "url": "git+ssh://git@github.com/jiawenlv/code-workflow-types.git"
   },
   "scripts": {
-    "build": "npm run clean && tsc",
+    "build": "npm run clean && npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
     "clean": "rimraf dist",
     "dev": "npm run build -- --watch",
     "prepublishOnly": "npm run build"
