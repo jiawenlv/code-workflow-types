@@ -1,26 +1,8 @@
 {
   "name": "@lvjw/code-workflow-types",
   "version": "1.0.4",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/types/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js",
-      "types": "./dist/types/index.d.ts"
-    },
-    "./types": {
-      "import": "./dist/esm/types/index.js",
-      "require": "./dist/cjs/types/index.js",
-      "types": "./dist/types/types/index.d.ts"
-    },
-    "./enums": {
-      "import": "./dist/esm/enums/index.js",
-      "require": "./dist/cjs/enums/index.js",
-      "types": "./dist/types/enums/index.d.ts"
-    }
-  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -29,10 +11,7 @@
     "url": "git+ssh://git@github.com/jiawenlv/code-workflow-types.git"
   },
   "scripts": {
-    "build": "npm run clean && npm run build:types && npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc -p tsconfig.esm.json",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:types": "tsc -p tsconfig.types.json",
+    "build": "npm run clean && tsc",
     "clean": "rimraf dist",
     "dev": "npm run build -- --watch",
     "prepublishOnly": "npm run build"
@@ -46,6 +25,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^24.0.10",
     "rimraf": "^5.0.5",
     "typescript": "^5.8.3"
   },
@@ -56,5 +36,8 @@
     "url": "https://github.com/jiawenlv/code-workflow-types/issues"
   },
   "homepage": "https://github.com/jiawenlv/code-workflow-types#readme",
-  "description": "Type definitions for code workflow tools"
+  "description": "Type definitions for code workflow tools",
+  "dependencies": {
+    "zod": "^3.25.74"
+  }
 }

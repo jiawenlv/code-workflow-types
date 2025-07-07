@@ -8,7 +8,10 @@
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "rootDir": "./src",
-    "isolatedModules": true
+    "isolatedModules": true,
+     "module": "ESNext",
+    "moduleResolution": "bundler",
+    "outDir": "./dist"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
